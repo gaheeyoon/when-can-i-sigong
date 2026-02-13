@@ -251,7 +251,7 @@ function updateStatus() {
       }
     } else {
       statusMessage.className = 'status-message show warning';
-      statusMessage.textContent = '⚠️ 잔금일과 입주일 간격이 너무 좁아 간단 시공이 불가능합니다. (최소 5일 전 확보 필요)';
+      statusMessage.textContent = '⚠️ 잔금일과 입주일 간격이 너무 멀어 간단 시공이 불가능합니다. (최소 5일 전 확보 필요)';
     }
   } else {
     statusMessage.className = 'status-message show info';

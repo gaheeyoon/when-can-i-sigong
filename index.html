@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>시공 가능일 계산기 | 의왕시청역 풍경채 어바니티 신축 아파트 입주 시공 스케줄</title>
+  <meta name="description" content="신축 아파트 입주 시 시공 가능일을 간편하게 계산하세요. 잔금일과 입주일을 입력하면 간단 시공, 전체 시공 가능 일자를 한눈에 확인할 수 있습니다.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-icon">🏗️</div>
+      <h1>시공 가능일 계산기</h1>
+      <p class="header-subtitle">의왕시청역 풍경채 어바니티, 언제 시공할 수 있을까?</p>
+    </header>
+
+    <!-- Date Input Section -->
+    <section class="date-input-section">
+      <div class="date-inputs-wrapper">
+        <div class="date-field">
+          <label for="balance-date">💰 잔금일</label>
+          <input type="date" id="balance-date" min="2026-02-20" max="2026-04-30">
+        </div>
+        <div class="date-field">
+          <label for="movein-date">🏠 입주일</label>
+          <input type="date" id="movein-date" min="2026-02-20" max="2026-04-30">
+        </div>
+      </div>
+      <label class="same-date-checkbox">
+        <input type="checkbox" id="same-date-check">
+        <span class="checkmark"></span>
+        <span>잔금일과 입주일이 동일합니다</span>
+      </label>
+    </section>
+
+    <!-- Status Message -->
+    <div class="status-message" id="status-message"></div>
+
+    <!-- Legend -->
+    <section class="legend-section" id="legend-section">
+      <div class="legend-item">
+        <span class="legend-dot simple"></span>
+        <span>간단 시공</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot full"></span>
+        <span>모든 시공</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot today-dot"></span>
+        <span>오늘</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot balance-dot"></span>
+        <span>잔금일</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot movein-dot"></span>
+        <span>입주일</span>
+      </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="calendar-section" id="calendar-section">
+      <div class="calendar-grid">
+        <div class="calendar-month" id="cal-2026-02"></div>
+        <div class="calendar-month" id="cal-2026-03"></div>
+        <div class="calendar-month" id="cal-2026-04"></div>
+      </div>
+    </section>
+
+    <!-- Info Cards Section -->
+    <section class="info-section">
+      <div class="info-card simple-card">
+        <div class="info-card-header">
+          <span class="info-icon">🔧</span>
+          <h3>간단 시공</h3>
+        </div>
+        <p class="info-card-desc">잔금일 = 입주일인 경우, 입주일 5일 전 ~ 1일 전까지 가능. 잔금일과 입주일이 같지 않으면 잔금 전 간단 시공은 불가합니다.</p>
+        <div class="info-tags">
+          <span class="tag">줄눈</span>
+          <span class="tag">탄성코트</span>
+          <span class="tag">입주청소</span>
+        </div>
+      </div>
+
+      <div class="info-card full-card">
+        <div class="info-card-header">
+          <span class="info-icon">🏗️</span>
+          <h3>전체 시공</h3>
+        </div>
+        <p class="info-card-desc">잔금일 이후부터 모든 시공 가능</p>
+        <div class="info-tags">
+          <span class="tag">모든 시공 가능</span>
+        </div>
+      </div>
+
+      <div class="info-card weekend-card">
+        <div class="info-card-header">
+          <span class="info-icon">📅</span>
+          <h3>주말 시공 안내</h3>
+        </div>
+        <div class="weekend-content">
+          <div class="weekend-allowed">
+            <h4>✅ 허용 가능</h4>
+            <div class="info-tags">
+              <span class="tag">붙박이장</span>
+              <span class="tag">냉장고장</span>
+              <span class="tag">조명</span>
+              <span class="tag">시스템에어컨 설치</span>
+              <span class="tag">중문 설치 (13~15시 권장)</span>
+              <span class="tag">필름</span>
+              <span class="tag">도배</span>
+              <span class="tag">세탁실 건조대</span>
+              <span class="tag">줄눈</span>
+              <span class="tag">탄성코트</span>
+              <span class="tag">입주청소</span>
+              <span class="tag">커튼</span>
+              <span class="tag">실링팬</span>
+              <span class="tag">가구</span>
+              <span class="tag">펜트리장</span>
+            </div>
+          </div>
+          <div class="weekend-forbidden">
+            <h4>🚫 절대 불가</h4>
+            <div class="info-tags forbidden-tags">
+              <span class="tag forbidden">철거 공사</span>
+              <span class="tag forbidden">마루 설치</span>
+              <span class="tag forbidden">아트월 작업</span>
+              <span class="tag forbidden">시스템에어컨 (배관 철거 후 신규 설치)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>💡 자세한 내용은 공지글 <a href="https://cafe.naver.com/jeilview/5172" target="_blank">≪관리사무소 & 입주지원센터 협의 내용 안내≫</a>을 참고해주세요.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
